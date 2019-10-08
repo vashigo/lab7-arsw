@@ -36,7 +36,6 @@ public class CollabPaintWebSocketConfig extends AbstractWebSocketMessageBrokerCo
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/topic");
         config.setApplicationDestinationPrefixes("/app");   
-        config.setPathMatcher(new AntPathMatcher("."));
     }
 
     @Override
