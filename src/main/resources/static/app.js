@@ -58,12 +58,15 @@ var app = (function () {
         },
 
         publishPoint: function(px,py){
+            var pos = getMousePosition(event);
+            var px = pos.x;
+            var py = pos.y;
             var pt=new Point(px,py);
             console.info("publishing point at "+pt);
             addPointToCanvas(pt);
             //publicar el evento
             stompClient.send("/topic/newpoint", {}, JSON.stringify(pt));
-            alert(JSON.stringify(pt));
+            //alert(JSON.stringify(pt));
         },
 
         disconnect: function () {
